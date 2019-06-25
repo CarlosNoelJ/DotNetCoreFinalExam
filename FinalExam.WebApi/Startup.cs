@@ -29,8 +29,8 @@ namespace FinalExam.WebApi
             services.AddControllers()
                 .AddNewtonsoftJson();
 
-            services.AddEntityFrameworkNpgsql()
-                .AddDbContext<ChinookDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("postgresql"), b => b.MigrationsAssembly("FinalExam.WebApi")))
+            services.AddEntityFrameworkMySql()
+                .AddDbContext<ChinookDbContext>(opt => opt.UseMySql(Configuration.GetConnectionString("postgresql"), b => b.MigrationsAssembly("FinalExam.WebApi")))
                 .BuildServiceProvider();
 
         }
